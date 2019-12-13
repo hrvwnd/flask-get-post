@@ -1,13 +1,11 @@
+from flask import Flask
 import requests
 
-#GET
-response = requests.get("http://localhost:5000")
-print (response.test)
+app =Flask(__name__)
+@app.route('/',methods=['GET'])
+def test():
+    requests.post('localhost:5000', json={"name":"Bob"})
+    return "ok \n"
 
-#POST
-responsepose("http://localhost:5000",json={"name":"Bob"})
-
-
-
-
-
+if __name__ = __main__:
+    app.run("5001")
